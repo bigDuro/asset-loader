@@ -6,6 +6,8 @@ import SearchBar from '../../components/SearchBar/';
 import AssetResults from '../../components/AssetResults/';
 import InlineMessaging from '../../components/InlineMessaging/';
 import ImagePreviewPanel from '../ImagePreviewPanel/';
+import VideoPreviewPanel from '../VideoPreviewPanel/';
+import YouTubeVideo from '../YouTubeVideo/';
 
 class AssetsLoader extends Component {
   constructor(props) {
@@ -16,7 +18,9 @@ class AssetsLoader extends Component {
         alt: '',
         src: ''
       },
-      video: {},
+      video: {
+        src: 'https://www.youtube.com/watch?v=tBaBl7gpYhs'
+      },
       searchResults: [],
       searchTerm: '',
       status: '',
@@ -143,7 +147,13 @@ class AssetsLoader extends Component {
           ),
           video: (
             <div className="mediaPanel">
-              video Settings
+            <div className="assets__loader">
+              Video Settings
+              <YouTubeVideo videoData={this.state.video}/>
+            </div>
+            <div className="assets__preview">
+              <VideoPreviewPanel videoData={this.state.video}/>
+            </div>
             </div>
           )
         }

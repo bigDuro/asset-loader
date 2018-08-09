@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <AssetsLoader types={this.state.types}/>
+        <AssetsLoader types={this.state.types} data={{}}/>
       </div>
     );
   }
